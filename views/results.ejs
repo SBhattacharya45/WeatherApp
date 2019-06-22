@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Weather Project</title>
+        <link rel="stylesheet" type="text/css" href="app_results.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <style>
+            body {
+                background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+                background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+                color: white;
+            }
+            
+            a {
+                color: white;
+            }
+            
+            
+        </style>
+    </head>
+    
+    <body>
+        <% 
+            var temp = (data["main"]["temp"]);
+            var wth = (data["weather"][0]["main"]);
+            var location = (data.name);
+            var humid = (data.main.humidity);
+            var wind = (data.wind.speed * 3.6);
+            var lid;
+            
+            if(wth == "Rain"){
+                var lid = "09d";
+            }
+            if(wth == "Mist"||wth == "Smoke"||wth == "Haze"){
+                var lid = "50d";
+            }
+            if(wth == "Clouds"){
+                var lid = "03d";
+            }
+            if(wth == "Clear"){
+                var lid = "01d";
+            }
+            
+            
+        %>
+        <div id="main" class"jumbotron">
+           <div id="location"><%= location %></div>
+           <div id="temp"><%= Math.round(temp)%>&deg;C</div><br>
+           <div id="logo"><image id="limg" src="http://openweathermap.org/img/w/<%= lid %>.png" height="100" width="100"></image></div> 
+           <div id="wth" class="inf">Weather: <%= wth %></div>
+           <div id="humid" class="inf">Humidity: <%= humid %>%</div>
+           <div id="spd" class="inf">Wind Speed: <%= Math.round(wind) %> km/h</div>
+           
+           <div class="inf"><u><a href="/">Search Again</a></u><div>
+           
+        </div>
+    </body>
+</html>

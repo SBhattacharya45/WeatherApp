@@ -1,0 +1,28 @@
+#main {
+    background-color: rgba(108, 122, 137, 0.5);
+    text-align: center;
+    margin: 0 auto;
+    width: 500px;
+    height: 300px;
+    position: relative;
+    top: 90px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#search {
+    width: 350px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 5px;
+    border: 0px;
+}
+
+#button {
+    position: relative;
+    top: 30px;
+    width: 100px;
+    height: 30px;
+}
+
+
+
