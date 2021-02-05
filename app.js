@@ -1,42 +1,39 @@
-var express = require("express");
-var app = express();
-var request = require("request");
+const express = require("express");
+const app = express();
+const axios = require('axios');
+require("dotenv").config();
 
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res){
-    
     res.render("home");
 });
 
 app.get("/results", function(req, res){
     var query = req.query.search;
-    for(var i = 0; i < query.length; i++){
-      if(query[i] == " "){
-          query[i] == "%20";
-      }  
-    }
-    // var url = "http://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=61763259e53e52a53cbb7856e3b8b932&units=metric";
-    var app_key = process.env.APPID;
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid="+ app_key + "&units=metric";
-    request(url, function(error, response, body){
-        if(!error && response.statusCode == 200) {
-           var data = JSON.parse(body);
-           res.render("results", {data: data});
-           
-       }
-       else {
-           res.send("ERROR");
-       }
-    });
+    
+    axios.get('https://api.opencagedata.com/geocode/v1/json?key='+ process.env.OPENCAGEDATA_ID +'&q=' + encodeURIComponent(query))
+    .then(response => {
+      // handle success
+      location = response.data.results[0].geometry;
+      console.log(location);
+      const url = 'https://api.openweathermap.org/data/2.5/onecall?lat='+ location.lat +'&lon='+ location.lng +'&exclude=minutely,hourly,alerts&appid=' + process.env.OPENWEATHER_ID; 
+      axios.get(url)
+      .then(weatherData => {
+        console.log(weatherData.data);
+      })
+      .catch(error => {
+        // handle error
+        console.log(error);
+      })
+    })
+    .catch(error => {
+      // handle error
+      console.log(error);
+    })
 });
 
-var port = process.env.PORT || 3000;
-app.listen(port, function () {
-    console.log("The Server Has Started!");
+app.listen(process.env.PORT, function () {
+    console.log("The server has started on port " + process.env.PORT);
 });
-
-// app.listen(process.env.PORT, process.env.IP, function(){
-//    console.log("Server Has Started");
-// });
