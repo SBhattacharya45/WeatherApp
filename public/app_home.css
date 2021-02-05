@@ -1,28 +1,85 @@
+body {
+    background-color: #27a770;
+    background-image: linear-gradient(315deg, #27a770 0%, #efefef 74%);
+}
+
 #main {
-    background-color: rgba(108, 122, 137, 0.5);
-    text-align: center;
-    margin: 0 auto;
-    width: 500px;
-    height: 300px;
-    position: relative;
-    top: 90px;
-    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    background-color: rgba(139, 69, 19, 0);
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-weight: 300;
 }
 
-#search {
-    width: 350px;
-    height: 40px;
-    border-radius: 20px;
-    padding: 5px;
-    border: 0px;
+#container {
+    background-color: rgba(82, 82, 82, 0.315);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    width: 50%;
+    height: 70%;
+    border-radius: 20px 10px 20px 10px;
+    box-shadow: 2px 2px 10px rgb(82, 82, 82);
 }
 
-#button {
-    position: relative;
-    top: 30px;
-    width: 100px;
-    height: 30px;
+#container a{
+    color: rgb(18, 77, 104);
+    text-decoration: none;
 }
+
+#header {
+    font-size: 50px;
+}
+
+#subheader{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#form {
+    height: 30%;
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.btn-grad {background-image: linear-gradient(to right, rgb(138, 185, 152) 0%, rgb(216, 212, 173)  51%, rgb(138, 185, 152)  100%)}
+.btn-grad {
+   margin: 0px;
+   padding: 10px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   border-radius: 10px;
+   display: block;
+   border: 0px;
+   box-shadow: -1px -1px 1px rgb(58, 70, 49) inset;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+ #search {
+     height: 40px;
+     width: 100%;
+     margin: 0;
+     border: 0;
+     border-radius: 10px;
+ }
+
+
 
 
 

@@ -2,24 +2,22 @@
     <head>
         <title>Weather Project</title>
         <link rel="stylesheet" type="text/css" href="app_home.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-        <style>
-            body {
-                background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-                background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-            }
-        </style>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     </head>
     
     <body>
         <div id="main" class="jumbotron">
             <div id="container">
-                <h1>Weather App</h1><br>
-            <form action="/results" method="GET">
-                <input id="search" type="text" name="search" placeholder="Search (Enter a prominent city)"><br>
-                <input id="button" class="btn btn-primary" type="submit">
-            </form> 
+                <div id="header">Just a Weather App</div>
+                <div id="subheader">Enter location, get results</div>
+                <form action="/results" method="GET" id="form">
+                    <input id="search" type="text" name="search" placeholder="Enter location"><br>
+                    <input class="btn-grad" type="submit">
+                </form>
+                <div>
+                    Find me at <a href="https://github.com/SBhattacharya45">Github</a> and <a href="https://www.linkedin.com/in/soumyadeep-bhattacharya-65b74b170/">LinkedIn.</a>. Made using OpenWeatherMap. 
+                </div>
             </div>
         </div>
     </body>
