@@ -45,6 +45,14 @@
                             <div>---</div>
                             <div><%= Math.round(info.temp.min) %>&deg;C</div>
                         </div>
+
+                        <div class="dailyElementMobile">
+                            <img class="dailyIcon" style="margin: 0;" src="icons/<%= info.weather[0].icon %>.png"/>
+                            <div><%= date.getDate() %> <%= months[ date.getMonth() ] %></div>
+                            <div><%= info.weather[0].main %></div>
+                            <div>Max: <%= Math.round(info.temp.max) %>&deg;C</div>
+                            <div>Min: <%= Math.round(info.temp.min) %>&deg;C</div>
+                        </div>
                     <% }) %>
                 </div>
                 <div id="footer"><a href="/">Search Again</a></div>
