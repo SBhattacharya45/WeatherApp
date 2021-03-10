@@ -117,11 +117,11 @@ body {
  @media only screen and (max-width: 640px) {
     #container {
         width: 90%;
-        height: 65%;
+        height: 350px;
     }
 
     #header {
-        font-size: 35px;
+        font-size: 32px;
     }
 
     #subheader {
@@ -135,6 +135,7 @@ body {
 
     #findme{
         text-align: center;
+        font-size: 15px;
     }
 }
 
