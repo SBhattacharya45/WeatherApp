@@ -114,6 +114,30 @@ body {
      border-radius: 10px;
  }
 
+ @media only screen and (max-width: 640px) {
+    #container {
+        width: 90%;
+        height: 65%;
+    }
+
+    #header {
+        font-size: 35px;
+    }
+
+    #subheader {
+        font-size: 18px;
+    }
+
+    #form {
+        width: 75%;
+        height: 25%;
+    }
+
+    #findme{
+        text-align: center;
+    }
+}
+
 
 
 
