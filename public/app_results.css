@@ -203,13 +203,26 @@
 
     #current {
         width: 92%;
+        margin-bottom: 20px;
+    }
+
+    #temperature {
+        font-size: 50px;
+    }
+
+    .subDetails  h3{
+        font-size: 14px;
+    }
+
+    #desc  h1{
+        font-size: 30px
     }
 
     #daily {
         flex-flow: column;
         align-items: center;
         width: 100%;
-        height: 400px;
+        height: 300px;
     }
 
     /* hide pc elements */
@@ -223,11 +236,17 @@
         align-items: center;
         justify-content: space-between;
         width: 90%;
-        height: 90px;
+        height: 30px;
+        font-size: 13px;
     }
 
     .dailyIcon {
-        width: 10%;
+        width: 8%;
         height: auto;
+        margin: 0;
+    }
+
+    #footer{
+        font-size: 14px;
     }
 }
